@@ -83,9 +83,9 @@ def extractFaceImages(imagelist, thumb_size):
     
     :param imagelist: A list of dictionaries, where the key "image" will contain the PIL Image data to process    
     '''
-    face_images = []
-    
+
     for item in imagelist:
+	face_images = []  
         for rec in item["faces"]:
             # Extract image
             face_images.append(item["image"].crop((rec[0],rec[1],rec[0]+rec[2],rec[1]+rec[3])))
